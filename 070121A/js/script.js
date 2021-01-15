@@ -1,0 +1,33 @@
+var vars;
+var temp_c;
+var temp_f;
+const apiKey = "eb4bd6b2982548b42b156c5b816ff5f9";
+const cityname = "Catamarca";
+const statecode = "4400";
+const countrycode = "Argentina";
+let provincias = ["Buenos Aires","Catamarca","Chaco","Chubut","Córdoba","Corrientes","Entre Ríos","Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquén","Río Negro,Salta","San Juan","Santa Cruz,Santa Fe","Santiago del Estero","Tierra del Fuego","Tucumán"]
+
+
+
+$.ajax({
+type: "GET",
+url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&appid=eb4bd6b2982548b42b156c5b816ff5f9",
+dataType: "json",
+success: function (data) {
+	alert(data);
+vars = data.main;
+temp_c = vars.temp - 273.15;
+temp_f = 1.8 * (vars.temp - 273.15) + 32;
+	alert(temp_c);
+	alert(temp_f);
+idciudad = data.id;
+	alert(idciudad);
+ciudad = data.name;
+	alert(ciudad);
+cod = data.cod;
+	alert(cod);
+},
+error: function (jqXHR, textStatus, errorThrown) {
+alert(errorThrown);
+}
+});

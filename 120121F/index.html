@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El tiempo - </title>
+    <!--Inclusión de libreria jquery-->
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <style type="text/css">
+        label {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        fieldset {
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Aplicación para consultar el Tiempo:</h2>
+    <fieldset>
+        <legend>El Tiempo</legend>
+        <form name="formulario" id="formulario" action="" method="get">
+            <label for="lugar">Ubicación </label>
+            <!--Solicito el nombre de la Ubicación para mostrar el tiempo-->
+            <input type="text" name="lugar" id="lugar" value="" maxlength="120" required>
+            <br/>
+            <span id="error"></span>
+            <input type="button" id="hoy" name="hoy" value="Previsión Hoy" />
+            <input type="button" id="dias" name="dias" value="Previsión 4 días" /> 
+        </form>
+    </fieldset>
+    <h2>Conectando con la API de tiempo</h2>
+    <div class="eltiempo" id="tiempo"></div>
+</body>
+
+</html>
